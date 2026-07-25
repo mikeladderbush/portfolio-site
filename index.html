@@ -68,19 +68,22 @@
         <h3>NBA Scoreboard</h3>
         <p class="project-desc">
           A live NBA scoreboard driven by an ESP32 MatrixPortal and a 64×32 HUB75 RGB LED matrix.
-          Polls a game-stats API, renders team logos, scores, and clock state on the panel in real time,
-          and syncs its clock over the network. Includes a control server for on-device configuration over
-          mDNS, and a native test harness (with an always-autoplay test server) so display and formatting
-          logic can be exercised without hardware attached.
+          Game logic runs as a set of FreeRTOS tasks — polling the game-stats API, syncing the clock,
+          and serving the on-device config server all run concurrently instead of a single blocking
+          loop. The display pipeline sits on Adafruit's Protomatter driver, and the whole thing was
+          first prototyped in CircuitPython to nail down rendering and game-state logic before being
+          ported to C++/PlatformIO for the production firmware.
         </p>
         <ul class="project-facts">
-          <li>ESP32-S3 (Adafruit MatrixPortal) + Adafruit Protomatter</li>
+          <li>FreeRTOS tasks for polling, clock sync, and the control server</li>
+          <li>ESP32-S3 (Adafruit MatrixPortal) + Adafruit Protomatter for the HUB75 panel</li>
+          <li>Prototyped in CircuitPython, ported to C++ for the real build</li>
           <li>Custom API client: HTTP fetch separated from JSON parsing</li>
           <li>mDNS-based config &amp; control server, live clock sync</li>
           <li>Native unit tests via PlatformIO's <code>native</code> environment + ArduinoFake</li>
         </ul>
         <div class="project-tags">
-          <span>C++</span><span>ESP32</span><span>PlatformIO</span><span>HUB75</span><span>REST API</span>
+          <span>C++</span><span>FreeRTOS</span><span>ESP32</span><span>Protomatter</span><span>CircuitPython</span><span>PlatformIO</span>
         </div>
         <div class="project-links">
           <a href="#" class="link-disabled" title="Repository is private">Source (private)</a>
@@ -91,39 +94,26 @@
     <div class="project-grid">
 
       <article class="project card">
-        <p class="project-status planned">In progress</p>
-        <h3>Nucleo Scoreboard Rebuild</h3>
-        <p class="project-desc">
-          Rebuilding the NBA scoreboard from scratch on an STM32 Nucleo-F411RE — no WiFi radio,
-          no Protomatter. Driving the HUB75 matrix by hand and talking to an ESP-01 as a dumb
-          WiFi coprocessor over UART AT commands, instead of leaning on HTTPClient.
-        </p>
-        <div class="project-tags">
-          <span>STM32</span><span>Bare-metal</span><span>HAL</span><span>UART / AT</span>
-        </div>
-        <p class="project-note">Goal: real bare-metal fundamentals — cross-compilation, SWD/GDB hardware debugging — that the Arduino workflow skips over.</p>
-      </article>
-
-      <article class="project card">
-        <p class="project-status idea">Early idea</p>
+        <p class="project-status idea">Up next</p>
         <h3>Guitar Fret Trainer</h3>
         <p class="project-desc">
           A pocket-sized (~2×2cm) trainer that flashes a random string/fret position on a tiny
           OLED, then reveals the note after a delay. Stretch goal: randomized chord progressions,
-          budget permitting.
+          budget permitting. This is the project earmarked for real bare-metal STM32 work —
+          direct register access, no HAL shortcuts, hardware debugging over SWD/GDB.
         </p>
         <div class="project-tags">
-          <span>STM32G031</span><span>SSD1306 OLED</span><span>I2C</span>
+          <span>STM32</span><span>Bare-metal</span><span>SWD / GDB</span>
         </div>
-        <p class="project-note">Candidate hardware: STM32G031F8P6 driving a 64×48 SSD1306 OLED — still unscoped.</p>
+        <p class="project-note">Queued up after the scoreboard — hardware not yet acquired.</p>
       </article>
 
       <article class="project card card-more">
         <p class="project-status idea">More coming</p>
         <h3>Next build TBD</h3>
         <p class="project-desc">
-          This slot's open. Check back as the Nucleo rebuild and fret trainer take shape —
-          or reach out if you want to compare notes on bare-metal embedded work.
+          This slot's open. Check back once the fret trainer hardware lands — or reach out if you
+          want to compare notes on embedded work.
         </p>
       </article>
 
