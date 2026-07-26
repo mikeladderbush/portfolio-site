@@ -71,6 +71,31 @@ body {
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
 }
 
+.bg-skyline {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 46vh;
+  min-height: 340px;
+  z-index: -2;
+  background-color: var(--accent);
+  opacity: 0.14;
+  -webkit-mask-image: url("assets/boston-skyline.svg");
+  mask-image: url("assets/boston-skyline.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: bottom center;
+  mask-position: bottom center;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
+:root[data-theme="light"] .bg-skyline { opacity: 0.1; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .bg-skyline { opacity: 0.1; }
+}
+
 code {
   font-family: var(--font-mono);
   background: var(--bg-elev-2);
