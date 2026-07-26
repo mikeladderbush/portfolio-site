@@ -1,47 +1,50 @@
 :root {
-  --bg: #0a0b0f;
-  --bg-elev: #12141c;
-  --bg-elev-2: #181b26;
-  --border: #262a38;
-  --text: #e8e9ee;
-  --text-dim: #9498a8;
-  --text-faint: #5b5f70;
-  --accent: #5eead4;
-  --accent-2: #a78bfa;
-  --accent-warm: #fb923c;
+  --bg: #0c101d;
+  --bg-elev: rgba(19, 24, 42, 0.74);
+  --bg-elev-2: rgba(27, 33, 56, 0.7);
+  --border: #333d63;
+  --text: #eef0f7;
+  --text-dim: #a7adc4;
+  --text-faint: #6b7291;
+  --accent: #f0b84c;
+  --accent-2: #8f8fd9;
+  --accent-warm: #e2604a;
   --font-display: "Space Grotesk", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --radius: 14px;
-  --shadow: 0 20px 60px -20px rgba(0,0,0,0.6);
+  --shadow: 0 20px 60px -20px rgba(0,0,0,0.7);
+  --overlay: linear-gradient(180deg, rgba(9,12,22,0.55) 0%, rgba(9,12,22,0.78) 45%, #0c101d 92%);
 }
 
 :root[data-theme="light"] {
-  --bg: #f7f7f5;
-  --bg-elev: #ffffff;
-  --bg-elev-2: #f0f0ee;
-  --border: #e1e1dd;
-  --text: #16171c;
-  --text-dim: #55586a;
-  --text-faint: #9498a8;
-  --accent: #0f9d8e;
-  --accent-2: #7c5cd6;
-  --accent-warm: #d9640f;
-  --shadow: 0 20px 60px -25px rgba(0,0,0,0.2);
+  --bg: #eef1f6;
+  --bg-elev: rgba(255, 255, 255, 0.82);
+  --bg-elev-2: rgba(255, 255, 255, 0.65);
+  --border: #d3d8e6;
+  --text: #171a26;
+  --text-dim: #4b5170;
+  --text-faint: #848ba8;
+  --accent: #b9790f;
+  --accent-2: #6c63b5;
+  --accent-warm: #c14a33;
+  --shadow: 0 20px 60px -25px rgba(20,25,50,0.25);
+  --overlay: linear-gradient(180deg, rgba(238,241,246,0.72) 0%, rgba(238,241,246,0.88) 45%, #eef1f6 92%);
 }
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --bg: #f7f7f5;
-    --bg-elev: #ffffff;
-    --bg-elev-2: #f0f0ee;
-    --border: #e1e1dd;
-    --text: #16171c;
-    --text-dim: #55586a;
-    --text-faint: #9498a8;
-    --accent: #0f9d8e;
-    --accent-2: #7c5cd6;
-    --accent-warm: #d9640f;
-    --shadow: 0 20px 60px -25px rgba(0,0,0,0.2);
+    --bg: #eef1f6;
+    --bg-elev: rgba(255, 255, 255, 0.82);
+    --bg-elev-2: rgba(255, 255, 255, 0.65);
+    --border: #d3d8e6;
+    --text: #171a26;
+    --text-dim: #4b5170;
+    --text-faint: #848ba8;
+    --accent: #b9790f;
+    --accent-2: #6c63b5;
+    --accent-warm: #c14a33;
+    --shadow: 0 20px 60px -25px rgba(20,25,50,0.25);
+    --overlay: linear-gradient(180deg, rgba(238,241,246,0.72) 0%, rgba(238,241,246,0.88) 45%, #eef1f6 92%);
   }
 }
 
@@ -71,29 +74,15 @@ body {
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
 }
 
-.bg-skyline {
+.bg-photo {
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 46vh;
-  min-height: 340px;
-  z-index: -2;
-  background-color: var(--accent);
-  opacity: 0.14;
-  -webkit-mask-image: url("assets/boston-skyline.svg");
-  mask-image: url("assets/boston-skyline.svg");
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: bottom center;
-  mask-position: bottom center;
-  -webkit-mask-size: cover;
-  mask-size: cover;
-}
-
-:root[data-theme="light"] .bg-skyline { opacity: 0.1; }
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) .bg-skyline { opacity: 0.1; }
+  inset: 0;
+  z-index: -3;
+  background-image: var(--overlay), url("assets/boston-charles-dusk.jpg");
+  background-size: cover;
+  background-position: center 62%;
+  background-repeat: no-repeat;
+  filter: saturate(0.92);
 }
 
 code {
@@ -238,6 +227,8 @@ section { padding: 64px 0; border-top: 1px solid var(--border); }
   gap: 40px;
   align-items: center;
   background: var(--bg-elev);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 32px;
@@ -338,6 +329,8 @@ section { padding: 64px 0; border-top: 1px solid var(--border); }
 }
 .project.card {
   background: var(--bg-elev);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 26px;

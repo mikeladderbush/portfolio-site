@@ -34,7 +34,7 @@ for (let i = 0; i < COLS * ROWS; i++) {
   cells.push(cell);
 }
 
-const colors = ['#5eead4', '#a78bfa', '#fb923c', '#f472b6'];
+const colors = ['#f0b84c', '#8f8fd9', '#e2604a', '#f7d38a'];
 
 function flicker() {
   // dim everything slightly
