@@ -327,6 +327,34 @@ section { padding: 64px 0; border-top: 1px solid var(--border); }
 .contact { text-align: left; }
 .contact .btn { margin-top: 16px; }
 
+.spec-sheet {
+  margin: 0;
+  border-top: 1px solid var(--border);
+  max-width: 720px;
+}
+.spec-sheet > div {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.spec-sheet dt {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.spec-sheet dd {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.94rem;
+}
+@media (max-width: 600px) {
+  .spec-sheet > div { grid-template-columns: 1fr; gap: 4px; }
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 32px 24px 48px;

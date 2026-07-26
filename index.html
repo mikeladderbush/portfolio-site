@@ -36,13 +36,13 @@
     <p class="eyebrow">// embedded systems &amp; firmware</p>
     <h1>Michael Ladderbush</h1>
     <p class="hero-sub">
-      I build things that live on bare metal — LED matrices, microcontrollers, and the
-      firmware that keeps them honest. Currently trading Arduino conveniences for
-      register-level control and a real debugger.
+      Embedded systems portfolio. Focus areas: real-time firmware (FreeRTOS), LED matrix
+      display drivers, RESTful API integration on microcontrollers, and bare-metal
+      programming on resource-constrained targets.
     </p>
     <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">See projects</a>
-      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      <a href="#projects" class="btn btn-primary">Projects</a>
+      <a href="#contact" class="btn btn-ghost">Contact</a>
     </div>
     <div class="hero-tags">
       <span>C / C++</span>
@@ -67,12 +67,11 @@
         <p class="project-status live">Active build</p>
         <h3>NBA Scoreboard</h3>
         <p class="project-desc">
-          A live NBA scoreboard driven by an ESP32 MatrixPortal and a 64×32 HUB75 RGB LED matrix.
-          Game logic runs as a set of FreeRTOS tasks — polling the game-stats API, syncing the clock,
-          and serving the on-device config server all run concurrently instead of a single blocking
-          loop. The display pipeline sits on Adafruit's Protomatter driver, and the whole thing was
-          first prototyped in CircuitPython to nail down rendering and game-state logic before being
-          ported to C++/PlatformIO for the production firmware.
+          Live NBA scoreboard driven by an ESP32 MatrixPortal and a 64×32 HUB75 RGB LED matrix.
+          Game-stats polling, clock synchronization, and the on-device config server each run as
+          independent FreeRTOS tasks rather than a single blocking loop. Display output is handled
+          by Adafruit's Protomatter driver. Display rendering and game-state logic were initially
+          prototyped in CircuitPython, then ported to C++/PlatformIO for the production build.
         </p>
         <ul class="project-facts">
           <li>FreeRTOS tasks for polling, clock sync, and the control server</li>
@@ -94,26 +93,25 @@
     <div class="project-grid">
 
       <article class="project card">
-        <p class="project-status idea">Up next</p>
+        <p class="project-status idea">Planned</p>
         <h3>Guitar Fret Trainer</h3>
         <p class="project-desc">
-          A pocket-sized (~2×2cm) trainer that flashes a random string/fret position on a tiny
-          OLED, then reveals the note after a delay. Stretch goal: randomized chord progressions,
-          budget permitting. This is the project earmarked for real bare-metal STM32 work —
-          direct register access, no HAL shortcuts, hardware debugging over SWD/GDB.
+          Compact (~2×2cm display) fretboard note-recall trainer. Generates a randomized
+          string/fret position, displays it, then reveals the corresponding note after a
+          fixed interval. Conditional stretch goal: randomized chord-progression generation,
+          subject to available flash/RAM budget. Target platform: bare-metal STM32, no HAL.
         </p>
         <div class="project-tags">
           <span>STM32</span><span>Bare-metal</span><span>SWD / GDB</span>
         </div>
-        <p class="project-note">Queued up after the scoreboard — hardware not yet acquired.</p>
+        <p class="project-note">Status: hardware not yet acquired. Scheduled after scoreboard completion.</p>
       </article>
 
       <article class="project card card-more">
-        <p class="project-status idea">More coming</p>
-        <h3>Next build TBD</h3>
+        <p class="project-status idea">TBD</p>
+        <h3>Reserved</h3>
         <p class="project-desc">
-          This slot's open. Check back once the fret trainer hardware lands — or reach out if you
-          want to compare notes on embedded work.
+          Slot reserved for a future project.
         </p>
       </article>
 
@@ -122,25 +120,23 @@
 
   <section id="about" class="about">
     <h2 class="section-title"><span class="num">02</span> About</h2>
-    <p>
-      I'm moving away from the Arduino/PlatformIO-with-libraries workflow and toward
-      resource-constrained, bare-metal embedded development — direct register access,
-      cross-compiled toolchains, and hardware debugging over SWD/GDB instead of
-      <code>Serial.println</code>. The projects here track that shift: from a fully-featured
-      WiFi scoreboard down to chips with a few kilobytes of RAM and no safety net.
-    </p>
+    <dl class="spec-sheet">
+      <div><dt>Domain</dt><dd>Embedded systems, firmware development</dd></div>
+      <div><dt>Current toolchain</dt><dd>C / C++, PlatformIO, Arduino framework (ESP32), FreeRTOS</dd></div>
+      <div><dt>Direction</dt><dd>Transitioning toward bare-metal STM32 development: direct register access, cross-compiled toolchains, hardware debugging via SWD/GDB</dd></div>
+      <div><dt>Scope of work shown here</dt><dd>Real-time firmware, LED matrix display driving, network-connected embedded devices, resource-constrained programming</dd></div>
+    </dl>
   </section>
 
   <section id="contact" class="contact">
     <h2 class="section-title"><span class="num">03</span> Contact</h2>
-    <p>Have a project, a question, or a debugger war story to share?</p>
     <a class="btn btn-primary" href="mailto:mikeladderbush@gmail.com">mikeladderbush@gmail.com</a>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <p>Built with plain HTML/CSS/JS — no framework, no build step. © <span id="year"></span> Michael Ladderbush.</p>
+  <p>Built with HTML/CSS/JS, no framework. © <span id="year"></span> Michael Ladderbush.</p>
 </footer>
 
 <script src="script.js"></script>
