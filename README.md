@@ -1,17 +1,30 @@
 # portfolio-site
 
-Personal portfolio — plain HTML/CSS/JS, no build step, no framework.
+Personal embedded-systems portfolio for [Michael Ladderbush](https://github.com/mikeladderbush).
+
+**Live:** https://mikeladderbush.github.io/portfolio-site/
+
+## Stack
+
+Plain HTML/CSS/JS. No framework, no build step, no dependencies beyond a Google Fonts link.
+
+- `index.html` — page structure and content
+- `styles.css` — theming (CSS custom properties), layout, dark/light mode
+- `script.js` — theme toggle (persisted to `localStorage`), footer year, animated LED-matrix demo
+- `assets/` — background image and other static assets
 
 ## Develop
 
-Just open `index.html` in a browser, or serve it locally:
+Open `index.html` directly in a browser, or serve it locally so relative asset paths resolve the same way they will in production:
 
 ```bash
 python -m http.server 8000
 ```
 
-## Deploy (free, via GitHub Pages)
+Then visit `http://localhost:8000`.
 
-1. Push this repo to GitHub.
-2. In the repo settings, enable **Pages** → source: `main` branch, `/ (root)`.
-3. Site goes live at `https://<username>.github.io/<repo>/`.
+## Deploy
+
+Hosted on GitHub Pages, served from the `main` branch root. Any push to `main` updates the live site — no build/CI step involved.
+
+To point Pages at a different branch or path: repo **Settings → Pages**.
