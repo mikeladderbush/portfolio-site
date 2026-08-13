@@ -322,6 +322,54 @@ section { padding: 64px 0; border-top: 1px solid var(--border); }
   transition: background 0.4s ease;
 }
 
+.reg-demo {
+  background: #000;
+  border-radius: 10px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.6);
+  width: 100%;
+  max-width: 300px;
+  min-height: 180px;
+}
+.reg-demo-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #222;
+}
+.reg-led {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #3a2c12;
+  box-shadow: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+  flex-shrink: 0;
+}
+.reg-led.on {
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+.reg-demo-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #6b7291;
+  letter-spacing: 0.03em;
+}
+.reg-log {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  color: var(--accent);
+  white-space: pre-wrap;
+  word-break: break-all;
+  min-height: 120px;
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

@@ -91,32 +91,41 @@
       </div>
     </article>
 
-    <div class="project-grid">
-
-      <article class="project card">
-        <p class="project-status idea">Planned</p>
-        <h3>Guitar Fret Trainer</h3>
-        <p class="project-desc">
-          Compact (~2×2cm display) fretboard note-recall trainer. Generates a randomized
-          string/fret position, displays it, then reveals the corresponding note after a
-          fixed interval. Conditional stretch goal: randomized chord-progression generation,
-          subject to available flash/RAM budget. Target platform: bare-metal STM32, no HAL.
-        </p>
-        <div class="project-tags">
-          <span>STM32</span><span>Bare-metal</span><span>SWD / GDB</span>
+    <article class="project featured">
+      <div class="project-media" aria-hidden="true">
+        <div class="reg-demo">
+          <div class="reg-demo-top">
+            <span class="reg-led" id="regLed"></span>
+            <span class="reg-demo-label">PC6 · GPIOC</span>
+          </div>
+          <pre class="reg-log" id="regLog"></pre>
         </div>
-        <p class="project-note">Status: hardware not yet acquired. Scheduled after scoreboard completion.</p>
-      </article>
-
-      <article class="project card card-more">
-        <p class="project-status idea">TBD</p>
-        <h3>Reserved</h3>
+      </div>
+      <div class="project-body">
+        <p class="project-status live">Active build</p>
+        <h3>Guitar Multitool</h3>
         <p class="project-desc">
-          Slot reserved for a future project.
+          Bare-metal guitar practice device on an STM32G031. No HAL, no CMSIS, no RTOS —
+          every peripheral register is written by hand from RM0444, including a hand-written
+          linker script, vector table, and reset handler, verified on a NUCLEO-G031K8 and
+          flashed/debugged over SWD via OpenOCD and GDB.
         </p>
-      </article>
-
-    </div>
+        <ul class="project-facts">
+          <li>Hand-written linker script, vector table, and reset handler — no startup library</li>
+          <li>Register-level GPIO, verified via LMA/VMA inspection of the linked binary</li>
+          <li>Hardware-seeded xorshift32 RNG, seeded from ADC noise on a floating pin</li>
+          <li>Button input with pull-ups, edge detection, and a menu state machine</li>
+          <li>Flash + debug over SWD via OpenOCD/GDB</li>
+          <li>In progress: I2C driver and SSD1306 OLED display output</li>
+        </ul>
+        <div class="project-tags">
+          <span>C</span><span>STM32G031</span><span>Bare-metal</span><span>SWD / OpenOCD</span><span>RM0444</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="link-disabled" title="Repository is private">Source (private)</a>
+        </div>
+      </div>
+    </article>
   </section>
 
   <section id="about" class="about">
@@ -124,8 +133,8 @@
     <dl class="spec-sheet">
       <div><dt>Domain</dt><dd>Embedded systems, firmware development</dd></div>
       <div><dt>Current toolchain</dt><dd>C / C++, PlatformIO, Arduino framework (ESP32), FreeRTOS</dd></div>
-      <div><dt>Direction</dt><dd>Transitioning toward bare-metal STM32 development: direct register access, cross-compiled toolchains, hardware debugging via SWD/GDB</dd></div>
-      <div><dt>Scope of work shown here</dt><dd>Real-time firmware, LED matrix display driving, network-connected embedded devices, resource-constrained programming</dd></div>
+      <div><dt>Direction</dt><dd>Running two embedded projects in parallel: a HAL-based real-time firmware build (ESP32/FreeRTOS) and a bare-metal register-level build (STM32, no HAL/CMSIS)</dd></div>
+      <div><dt>Scope of work shown here</dt><dd>Real-time firmware, LED/OLED display driving, network-connected embedded devices, direct register programming, hardware debugging via SWD/GDB</dd></div>
     </dl>
   </section>
 
