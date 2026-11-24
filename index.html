@@ -137,49 +137,49 @@
 
     <article class="project featured">
       <div class="project-media" aria-hidden="true">
-        <svg class="survey-demo" id="surveyDemo" viewBox="0 0 320 240" role="img" aria-label="Animated survey plan: points, boundary, building and contours drawing in">
-          <defs>
-            <pattern id="svGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M20 0H0V20" fill="none" stroke="currentColor" stroke-width="0.4" opacity="0.18"/>
-            </pattern>
-          </defs>
+        <svg class="survey-demo" viewBox="0 0 320 240" role="img" aria-label="Draft site plan: lot boundary, building, driveway, partial contours, title block">
           <rect width="320" height="240" fill="#05070d"/>
-          <rect width="320" height="240" fill="url(#svGrid)" class="sv-grid"/>
-
-          <polygon class="sv-line sv-boundary" pathLength="1" points="60,48 262,40 276,192 50,202 60,48"/>
-          <polyline class="sv-line sv-traverse" pathLength="1" points="60,48 262,40 276,192 50,202"/>
-          <rect class="sv-bld" x="92" y="72" width="54" height="32" transform="rotate(-3 92 72)"/>
-
-          <path class="sv-line sv-contour" pathLength="1" d="M70 172 C90 132 130 112 170 102 S250 92 262 132 S220 186 150 189 S70 192 70 172Z"/>
-          <path class="sv-line sv-contour" pathLength="1" d="M105 162 C120 137 150 124 180 120 S235 120 240 142 S205 174 160 174 S100 177 105 162Z"/>
-          <path class="sv-line sv-contour" pathLength="1" d="M140 152 C150 140 175 136 195 138 S225 144 215 156 S180 164 160 162 S135 160 140 152Z"/>
-
-          <g class="sv-points">
-            <circle style="--i:0" cx="60" cy="48" r="3.2"/>
-            <circle style="--i:1" cx="262" cy="40" r="3.2"/>
-            <circle style="--i:2" cx="276" cy="192" r="3.2"/>
-            <circle style="--i:3" cx="50" cy="202" r="3.2"/>
-            <circle style="--i:4" cx="92" cy="72" r="2"/>
-            <circle style="--i:5" cx="146" cy="69" r="2"/>
-            <circle style="--i:6" cx="146" cy="101" r="2"/>
-            <circle style="--i:7" cx="92" cy="104" r="2"/>
-            <circle style="--i:8" cx="70" cy="172" r="2"/>
-            <circle style="--i:9" cx="170" cy="102" r="2"/>
-            <circle style="--i:10" cx="262" cy="132" r="2"/>
-            <circle style="--i:11" cx="150" cy="189" r="2"/>
-            <circle style="--i:12" cx="105" cy="162" r="2"/>
-            <circle style="--i:13" cx="180" cy="120" r="2"/>
-            <circle style="--i:14" cx="240" cy="142" r="2"/>
-            <circle style="--i:15" cx="160" cy="174" r="2"/>
-            <circle style="--i:16" cx="195" cy="138" r="2"/>
-            <circle style="--i:17" cx="160" cy="162" r="2"/>
+          <g class="sv-sheet" fill="none">
+            <rect x="6" y="6" width="308" height="228" stroke="#6b7291" stroke-width="0.8"/>
           </g>
-
-          <g class="sv-north" transform="translate(292 28)">
-            <path d="M0 -14 L5 4 L0 0 L-5 4Z"/>
-            <text y="16" text-anchor="middle">N</text>
+          <!-- contours, partly drafted -->
+          <g class="sv-contour" fill="none">
+            <path d="M24 150 C60 132 96 138 132 126 S196 112 232 124"/>
+            <path d="M24 170 C62 152 100 160 138 146 S190 134 214 142" />
+            <path d="M24 130 C58 112 100 116 140 104 S200 92 250 100" stroke-dasharray="4 3"/>
+            <path d="M24 110 C60 94 96 96 130 86" stroke-dasharray="2 4"/>
           </g>
-          <text class="sv-label" x="14" y="228">POINTS → LINEWORK → TIN → CONTOURS</text>
+          <!-- lot boundary -->
+          <polygon class="sv-boundary" points="46,48 252,42 262,168 40,176"/>
+          <!-- building and drive -->
+          <rect class="sv-bld" x="98" y="70" width="64" height="38" transform="rotate(-2 98 70)"/>
+          <rect class="sv-bld" x="162" y="84" width="26" height="24" transform="rotate(-2 162 84)"/>
+          <path class="sv-drive" d="M130 108 L128 176 M146 108 L144 175"/>
+          <!-- septic area, unfinished -->
+          <rect class="sv-draft" x="188" y="124" width="46" height="28" stroke-dasharray="3 3"/>
+          <!-- corner pins -->
+          <g class="sv-pins">
+            <circle cx="46" cy="48" r="2.4"/><circle cx="252" cy="42" r="2.4"/>
+            <circle cx="262" cy="168" r="2.4"/><circle cx="40" cy="176" r="2.4"/>
+          </g>
+          <!-- bearings and distances -->
+          <text class="sv-txt" x="108" y="39" text-anchor="middle">N 87°12'30" E 206.04'</text>
+          <text class="sv-txt" x="266" y="108" transform="rotate(90 266 108)" text-anchor="middle">S 03°41'10" E 126.11'</text>
+          <text class="sv-txt" x="150" y="188" text-anchor="middle">S 85°50'00" W 222.18'</text>
+          <text class="sv-txt" x="124" y="92" text-anchor="middle">DWELLING</text>
+          <text class="sv-txt" x="211" y="141" text-anchor="middle">TBD</text>
+          <text class="sv-txt" x="50" y="124">101</text><text class="sv-txt" x="50" y="144">100</text>
+          <!-- north arrow -->
+          <g class="sv-north" transform="translate(290 30)"><path d="M0 -13 L5 4 L0 0 L-5 4Z"/><text y="15" text-anchor="middle">N</text></g>
+          <!-- title block -->
+          <g class="sv-title">
+            <rect x="6" y="198" width="308" height="36" fill="none" stroke="#6b7291" stroke-width="0.8"/>
+            <line x1="200" y1="198" x2="200" y2="234" stroke="#6b7291" stroke-width="0.8"/>
+            <text x="14" y="214">SITE PLAN</text>
+            <text x="14" y="226" class="sv-sub">PREPARED FOR: —   SCALE 1" = 40'</text>
+            <text x="208" y="214" class="sv-sub">DRAFT — NOT FOR RECORDING</text>
+            <text x="208" y="226" class="sv-sub">SHEET 1 OF 1</text>
+          </g>
         </svg>
       </div>
       <div class="project-body">

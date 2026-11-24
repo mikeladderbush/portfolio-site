@@ -87,16 +87,3 @@ function typeStep() {
 }
 
 if (regLog && regLed) typeStep();
-
-// Survey plan demo: points, linework, then contours draw in; loops
-const survey = document.getElementById('surveyDemo');
-if (survey) {
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  survey.classList.add('run');
-  if (!reduce) {
-    setInterval(() => {
-      survey.classList.remove('run');
-      setTimeout(() => survey.classList.add('run'), 700);
-    }, 11000);
-  }
-}
