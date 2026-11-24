@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
 
@@ -137,48 +137,48 @@
 
     <article class="project featured">
       <div class="project-media" aria-hidden="true">
-        <svg class="survey-demo" viewBox="0 0 320 240" role="img" aria-label="Draft site plan: lot boundary, building, driveway, partial contours, title block">
+        <svg class="survey-demo" style="width:100%;max-width:340px;height:auto;display:block;border-radius:10px" viewBox="0 0 320 240" role="img" aria-label="Draft site plan: lot boundary, building, driveway, partial contours, title block">
           <rect width="320" height="240" fill="#05070d"/>
-          <g class="sv-sheet" fill="none">
+          <g fill="none">
             <rect x="6" y="6" width="308" height="228" stroke="#6b7291" stroke-width="0.8"/>
           </g>
           <!-- contours, partly drafted -->
-          <g class="sv-contour" fill="none">
+          <g fill="none" stroke="#f0b84c" stroke-width="1">
             <path d="M24 150 C60 132 96 138 132 126 S196 112 232 124"/>
             <path d="M24 170 C62 152 100 160 138 146 S190 134 214 142" />
             <path d="M24 130 C58 112 100 116 140 104 S200 92 250 100" stroke-dasharray="4 3"/>
             <path d="M24 110 C60 94 96 96 130 86" stroke-dasharray="2 4"/>
           </g>
           <!-- lot boundary -->
-          <polygon class="sv-boundary" points="46,48 252,42 262,168 40,176"/>
+          <polygon fill="none" stroke="#8f8fd9" stroke-width="1.2" points="46,48 252,42 262,168 40,176"/>
           <!-- building and drive -->
-          <rect class="sv-bld" x="98" y="70" width="64" height="38" transform="rotate(-2 98 70)"/>
-          <rect class="sv-bld" x="162" y="84" width="26" height="24" transform="rotate(-2 162 84)"/>
-          <path class="sv-drive" d="M130 108 L128 176 M146 108 L144 175"/>
+          <rect fill="#3a1f24" stroke="#e2604a" stroke-width="1.1" x="98" y="70" width="64" height="38" transform="rotate(-2 98 70)"/>
+          <rect fill="#3a1f24" stroke="#e2604a" stroke-width="1.1" x="162" y="84" width="26" height="24" transform="rotate(-2 162 84)"/>
+          <path fill="none" stroke="#a7adc4" stroke-width="0.9" d="M130 108 L128 176 M146 108 L144 175"/>
           <!-- septic area, unfinished -->
-          <rect class="sv-draft" x="188" y="124" width="46" height="28" stroke-dasharray="3 3"/>
+          <rect fill="none" stroke="#a7adc4" stroke-width="0.9" x="188" y="124" width="46" height="28" stroke-dasharray="3 3"/>
           <!-- corner pins -->
-          <g class="sv-pins">
+          <g fill="none" stroke="#eef0f7" stroke-width="1">
             <circle cx="46" cy="48" r="2.4"/><circle cx="252" cy="42" r="2.4"/>
             <circle cx="262" cy="168" r="2.4"/><circle cx="40" cy="176" r="2.4"/>
           </g>
           <!-- bearings and distances -->
-          <text class="sv-txt" x="108" y="39" text-anchor="middle">N 87°12'30" E 206.04'</text>
-          <text class="sv-txt" x="266" y="108" transform="rotate(90 266 108)" text-anchor="middle">S 03°41'10" E 126.11'</text>
-          <text class="sv-txt" x="150" y="188" text-anchor="middle">S 85°50'00" W 222.18'</text>
-          <text class="sv-txt" x="124" y="92" text-anchor="middle">DWELLING</text>
-          <text class="sv-txt" x="211" y="141" text-anchor="middle">TBD</text>
-          <text class="sv-txt" x="50" y="124">101</text><text class="sv-txt" x="50" y="144">100</text>
+          <text font-family="monospace" font-size="6.5" fill="#a7adc4" x="108" y="39" text-anchor="middle">N 87°12'30" E 206.04'</text>
+          <text font-family="monospace" font-size="6.5" fill="#a7adc4" x="266" y="108" transform="rotate(90 266 108)" text-anchor="middle">S 03°41'10" E 126.11'</text>
+          <text font-family="monospace" font-size="6.5" fill="#a7adc4" x="150" y="188" text-anchor="middle">S 85°50'00" W 222.18'</text>
+          <text font-family="monospace" font-size="6.5" fill="#a7adc4" x="124" y="92" text-anchor="middle">DWELLING</text>
+          <text font-family="monospace" font-size="6.5" fill="#a7adc4" x="211" y="141" text-anchor="middle">TBD</text>
+          <text font-family="monospace" font-size="6.5" fill="#a7adc4" x="50" y="124">101</text><text font-family="monospace" font-size="6.5" fill="#a7adc4" x="50" y="144">100</text>
           <!-- north arrow -->
-          <g class="sv-north" transform="translate(290 30)"><path d="M0 -13 L5 4 L0 0 L-5 4Z"/><text y="15" text-anchor="middle">N</text></g>
+          <g fill="#eef0f7" font-family="monospace" font-size="7" transform="translate(290 30)"><path d="M0 -13 L5 4 L0 0 L-5 4Z"/><text y="15" text-anchor="middle">N</text></g>
           <!-- title block -->
-          <g class="sv-title">
+          <g fill="#eef0f7" font-family="monospace" font-size="8">
             <rect x="6" y="198" width="308" height="36" fill="none" stroke="#6b7291" stroke-width="0.8"/>
             <line x1="200" y1="198" x2="200" y2="234" stroke="#6b7291" stroke-width="0.8"/>
             <text x="14" y="214">SITE PLAN</text>
-            <text x="14" y="226" class="sv-sub">PREPARED FOR: —   SCALE 1" = 40'</text>
-            <text x="208" y="214" class="sv-sub">DRAFT — NOT FOR RECORDING</text>
-            <text x="208" y="226" class="sv-sub">SHEET 1 OF 1</text>
+            <text x="14" y="226" font-size="6" fill="#a7adc4">PREPARED FOR: —   SCALE 1" = 40'</text>
+            <text x="208" y="214" font-size="6" fill="#a7adc4">DRAFT — NOT FOR RECORDING</text>
+            <text x="208" y="226" font-size="6" fill="#a7adc4">SHEET 1 OF 1</text>
           </g>
         </svg>
       </div>
@@ -226,6 +226,6 @@
   <p>Built with HTML/CSS/JS, no framework. © <span id="year"></span> Michael Ladderbush.</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
