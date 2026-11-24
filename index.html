@@ -21,6 +21,7 @@
     <a href="#top" class="logo">ML<span class="accent">_</span></a>
     <nav class="nav-links">
       <a href="#projects">Projects</a>
+      <a href="#survey">Civil 3D</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -131,10 +132,83 @@
     </article>
   </section>
 
+  <section id="survey" class="projects">
+    <h2 class="section-title"><span class="num">02</span> Civil 3D &amp; Land Surveying</h2>
+
+    <article class="project featured">
+      <div class="project-media" aria-hidden="true">
+        <svg class="survey-demo" id="surveyDemo" viewBox="0 0 320 240" role="img" aria-label="Animated survey plan: points, boundary, building and contours drawing in">
+          <defs>
+            <pattern id="svGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M20 0H0V20" fill="none" stroke="currentColor" stroke-width="0.4" opacity="0.18"/>
+            </pattern>
+          </defs>
+          <rect width="320" height="240" fill="#05070d"/>
+          <rect width="320" height="240" fill="url(#svGrid)" class="sv-grid"/>
+
+          <polygon class="sv-line sv-boundary" pathLength="1" points="60,48 262,40 276,192 50,202 60,48"/>
+          <polyline class="sv-line sv-traverse" pathLength="1" points="60,48 262,40 276,192 50,202"/>
+          <rect class="sv-bld" x="92" y="72" width="54" height="32" transform="rotate(-3 92 72)"/>
+
+          <path class="sv-line sv-contour" pathLength="1" d="M70 172 C90 132 130 112 170 102 S250 92 262 132 S220 186 150 189 S70 192 70 172Z"/>
+          <path class="sv-line sv-contour" pathLength="1" d="M105 162 C120 137 150 124 180 120 S235 120 240 142 S205 174 160 174 S100 177 105 162Z"/>
+          <path class="sv-line sv-contour" pathLength="1" d="M140 152 C150 140 175 136 195 138 S225 144 215 156 S180 164 160 162 S135 160 140 152Z"/>
+
+          <g class="sv-points">
+            <circle style="--i:0" cx="60" cy="48" r="3.2"/>
+            <circle style="--i:1" cx="262" cy="40" r="3.2"/>
+            <circle style="--i:2" cx="276" cy="192" r="3.2"/>
+            <circle style="--i:3" cx="50" cy="202" r="3.2"/>
+            <circle style="--i:4" cx="92" cy="72" r="2"/>
+            <circle style="--i:5" cx="146" cy="69" r="2"/>
+            <circle style="--i:6" cx="146" cy="101" r="2"/>
+            <circle style="--i:7" cx="92" cy="104" r="2"/>
+            <circle style="--i:8" cx="70" cy="172" r="2"/>
+            <circle style="--i:9" cx="170" cy="102" r="2"/>
+            <circle style="--i:10" cx="262" cy="132" r="2"/>
+            <circle style="--i:11" cx="150" cy="189" r="2"/>
+            <circle style="--i:12" cx="105" cy="162" r="2"/>
+            <circle style="--i:13" cx="180" cy="120" r="2"/>
+            <circle style="--i:14" cx="240" cy="142" r="2"/>
+            <circle style="--i:15" cx="160" cy="174" r="2"/>
+            <circle style="--i:16" cx="195" cy="138" r="2"/>
+            <circle style="--i:17" cx="160" cy="162" r="2"/>
+          </g>
+
+          <g class="sv-north" transform="translate(292 28)">
+            <path d="M0 -14 L5 4 L0 0 L-5 4Z"/>
+            <text y="16" text-anchor="middle">N</text>
+          </g>
+          <text class="sv-label" x="14" y="228">POINTS → LINEWORK → TIN → CONTOURS</text>
+        </svg>
+      </div>
+      <div class="project-body">
+        <p class="project-status live">Professional work</p>
+        <h3>Survey-to-Drawing Workflow</h3>
+        <p class="project-desc">
+          Residential site and subdivision plan production at a civil engineering and land
+          surveying firm. Field survey data is collected on site, imported into Autodesk
+          Civil 3D as point files, and developed into boundary linework, topographic surfaces,
+          and finished plan sheets.
+        </p>
+        <ul class="project-facts">
+          <li>Field survey: control traverse, topographic shots on buildings, concrete, fences, tree lines, and ground grades</li>
+          <li>Point files (PNEZD) imported to Civil 3D, with description codes driving layers and linework</li>
+          <li>TIN surface modeling and contour generation from shot data</li>
+          <li>Deliverables: boundary and ANR plans, septic system plans, built from a firm drawing template and completion checklists</li>
+          <li>Practice datasets worked end to end and checked against answer keys</li>
+        </ul>
+        <div class="project-tags">
+          <span>Civil 3D</span><span>AutoCAD</span><span>Land Surveying</span><span>TIN Surfaces</span><span>PNEZD</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
   <section id="about" class="about">
-    <h2 class="section-title"><span class="num">02</span> About</h2>
+    <h2 class="section-title"><span class="num">03</span> About</h2>
     <dl class="spec-sheet">
-      <div><dt>Domain</dt><dd>Embedded systems, firmware development</dd></div>
+      <div><dt>Domain</dt><dd>Embedded systems, firmware development; civil site plan production and land survey data (Civil 3D)</dd></div>
       <div><dt>Current toolchain</dt><dd>C / C++, PlatformIO, Arduino framework (ESP32), FreeRTOS, Kotlin (Android companion app)</dd></div>
       <div><dt>Direction</dt><dd>Running two embedded projects in parallel: a HAL-based real-time firmware build (ESP32/FreeRTOS) and a bare-metal register-level build (STM32, no HAL/CMSIS)</dd></div>
       <div><dt>Scope of work shown here</dt><dd>Real-time firmware, LED/OLED display driving, network-connected embedded devices, direct register programming, hardware debugging via SWD/GDB</dd></div>
@@ -142,7 +216,7 @@
   </section>
 
   <section id="contact" class="contact">
-    <h2 class="section-title"><span class="num">03</span> Contact</h2>
+    <h2 class="section-title"><span class="num">04</span> Contact</h2>
     <a class="btn btn-primary" href="mailto:mikeladderbush@gmail.com">mikeladderbush@gmail.com</a>
   </section>
 
